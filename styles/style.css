@@ -45,7 +45,7 @@
 
 .card-title {
   display: flex;
-  align-items: center;    
+  align-items: center;
 
   padding-left: 10px;
   background-color: white;
@@ -63,37 +63,37 @@
 }
 
 .image-2 {
-  filter: contrast(1.6);
+  filter: saturate(0.3);
 }
 
 .image-3 {
-  filter: invert(1);
+  filter: brightness(1.5) contrast(2) saturate(2);
 }
 
 .image-4 {
-  filter: sepia(0.9);
+  filter: hue-rotate(30deg);
 }
 
 .image-5 {
-  filter: grayscale(1);
+  filter: invert(1);
 }
 
 .image-6 {
-  filter: brightness(2);
+  filter: sepia(0.9);
 }
 
 .image-7 {
-  filter: hue-rotate(120deg);
+  filter: blur(10px);
 }
 
 .image-8 {
-  filter: contrast(1.2) saturate(1.5) hue-rotate(45deg);
+  filter: blur(5px) saturate(1) hue-rotate(120deg);
 }
 
 .image-label {
   position: absolute;
   top: 25px;
-  right: 13px; 
+  right: 13px;
   font-family: var(--font-accent);
   font-size: 14px;
   mix-blend-mode: hard-light;
@@ -121,7 +121,7 @@
 .card-p {
   margin: 25px;
   display: flex;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   gap: 27px;
 }
 
@@ -161,7 +161,7 @@
   font-size: 14px;
   line-height: 0.9;
   cursor: pointer;
-  overflow: hidden; 
+  overflow: hidden;
   z-index: 1;
 }
 
@@ -173,8 +173,8 @@
   width: 100%;
   height: 100%;
   background-color: black;
-  transform: translateX(-100%); 
-  transition: transform 0.5s ease-in-out; 
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
   z-index: -1;
 }
 
@@ -183,7 +183,7 @@
 }
 
 .card__like-button:hover::before {
-  transform: translateX(0); 
+  transform: translateX(0);
 }
 
 .card__like-button:focus {
