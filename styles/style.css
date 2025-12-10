@@ -1,24 +1,11 @@
-/* Здесь вы напишете основную часть стилей страницы.
-
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-
-*/
-
-/* mobile to desktop */
-
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--font-main), sans-serif;
   font-variation-settings: 'wght' var(--font-main-weight);
-  background-image: url('../images/background.png');
-  background-repeat: no-repeat;
+  background-image: var(--page-background);
+  background-size: 4px 4px, 4px 4px, cover;
+  background-attachment: fixed;
 }
 
 .content-width {
@@ -58,8 +45,8 @@
 
 .card-title {
   display: flex;
-  align-items: center;     /* вертикально по центру */
-  height: 31px;
+  align-items: center;    
+
   padding-left: 10px;
   background-color: white;
   border: 2px solid black;
@@ -71,9 +58,7 @@
 .card-image {
   position: relative;
   width: 100%;
-  border-bottom: 2px solid var(--Themes-mainColor, #000000);
-  border-left: 2px solid var(--Themes-mainColor, #000000);
-  border-right: 2px solid var(--Themes-mainColor, #000000);
+  border: 2px solid black;
   height: 700px;
 }
 
@@ -108,7 +93,7 @@
 .image-label {
   position: absolute;
   top: 25px;
-  right: 13px; /* ИСПРАВИТЬ */
+  right: 13px; 
   font-family: var(--font-accent);
   font-size: 14px;
   mix-blend-mode: hard-light;
@@ -136,7 +121,7 @@
 .card-p {
   margin: 25px;
   display: flex;
-  flex-wrap: wrap; /* важно для многострочного flex */
+  flex-wrap: wrap; 
   gap: 27px;
 }
 
@@ -144,7 +129,7 @@
   font-size: 18px;
   line-height: 21px;
 }
-/* подумать над тем, чтобы объединить контейнеры с текстом и с кнопками (есть общие свойства)*/
+
 .card-buttons {
   margin: 25px;
   display: flex;
@@ -160,25 +145,53 @@
   cursor: pointer;
 }
 
+.card__icon-button:focus-visible {
+  border: 2px solid black;
+  outline: none;
+}
+
 .card__like-button {
+  position: relative;
   width: 130px;
   height: 38px;
   background-color: white;
   border: 2px solid black;
-  padding: 12,5px 37px;
+  padding: 12.5px 37px;
   font-family: var(--font-accent);
   font-size: 14px;
   line-height: 0.9;
   cursor: pointer;
+  overflow: hidden; 
+  z-index: 1;
+}
+
+.card__like-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  transform: translateX(-100%); 
+  transition: transform 0.5s ease-in-out; 
+  z-index: -1;
 }
 
 .card__like-button:hover {
-  background-color: black;
   color: white;
+}
+
+.card__like-button:hover::before {
+  transform: translateX(0); 
 }
 
 .card__like-button:focus {
   outline: none;
+}
+
+.card__like-button:focus-visible {
+
   box-shadow: 2px 2px 0 #000;
 }
 
