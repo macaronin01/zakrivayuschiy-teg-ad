@@ -10,7 +10,190 @@
 
 */
 
+/* mobile to desktop */
+
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--font-main), sans-serif;
+  font-variation-settings: 'wght' var(--font-main-weight);
+  background-image: url('../images/background.png');
+  background-repeat: no-repeat;
+}
+
+.content-width {
+  width: clamp(371px, 100%, 700px);
+  margin: 0 auto;
+}
+
+.header {
+  background-color: white;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 100px auto;
+}
+
+.header-content {
+  font-family: var(--font-accent);
+  margin: 120px 14px;
+  text-align: center;
+}
+
+.header-title {
+  font-size: 49px;
+  vertical-align: bottom;
+}
+
+.header-subtitle {
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.card {
+  margin-bottom: 52px;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;     /* вертикально по центру */
+  height: 31px;
+  padding-left: 10px;
+  background-color: white;
+  border: 2px solid black;
+  font-size: 18px;
+  font-weight: 700;
+
+}
+
+.image-container {
+  position: relative;
+}
+
+.card-image {
+  display: block;
+  width: 100%;
+}
+
+.image-label {
+  position: absolute;
+  top: 25px;
+  right: 13px; /* ИСПРАВИТЬ */
+  font-family: var(--font-accent);
+  font-size: 14px;
+  mix-blend-mode: hard-light;
+  opacity: 0.5;
+  text-shadow:
+  -1px 0 #fff, 
+  0 1px #fff, 
+  1px 0 #fff, 
+  0 -1px #fff;
+}
+/*
+@supports((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
+  .image-label {
+    -webkit-text-stroke: 1px #fff;
+    text-stroke: 1px #fff;
+    text-shadow: none;
+  }
+}*/
+
+.card-subtitle {
+  background-color: white;
+  border: 2px solid black;
+}
+
+.card-p {
+  margin: 25px;
+  display: flex;
+  flex-wrap: wrap; /* важно для многострочного flex */
+  gap: 27px;
+}
+
+.card-text {
+  font-size: 18px;
+  line-height: 21px;
+}
+/* подумать над тем, чтобы объединить контейнеры с текстом и с кнопками (есть общие свойства)*/
+.card-buttons {
+  margin: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  gap: 12px;
+}
+
+.card__icon-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.card__like-button {
+  width: 130px;
+  height: 38px;
+  background-color: white;
+  border: 2px solid black;
+  padding: 12,5px 37px;
+  font-family: var(--font-accent);
+  font-size: 14px;
+  line-height: 0.9;
+  cursor: pointer;
+}
+
+.card__like-button:hover {
+  background-color: black;
+  color: white;
+}
+
+.card__like-button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 #000;
+}
+
+.dialog {
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.save-button {
+  display: grid;
+  grid-column: 1fr;
+  align-items: center;
+  padding: 15px;
+  gap: 8px;
+
+  background-color: white;
+  border: 2px solid black;
+  font-family: var(--font-accent);
+  font-size: 14px;
+}
+
+dialog {
+  border: 2px solid black;
+  display: grid;
+  gap: 20px;
+  font-family: var(--font-accent);
+  font-size: 14px;
+  padding: 30px;
+}
+
+.dialog-text {
+  display: flex;
+  flex-direction: row;
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
+}
+
+.dialog-button {
+  background-color: white;
+  border: 2px solid black;
+  height: 38px;
 }
