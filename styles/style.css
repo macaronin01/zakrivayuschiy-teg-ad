@@ -68,13 +68,41 @@
 
 }
 
-.image-container {
+.card-image {
   position: relative;
+  width: 100%;
+  border-bottom: 2px solid var(--Themes-mainColor, #000000);
+  border-left: 2px solid var(--Themes-mainColor, #000000);
+  border-right: 2px solid var(--Themes-mainColor, #000000);
+  height: 700px;
 }
 
-.card-image {
-  display: block;
-  width: 100%;
+.image-2 {
+  filter: contrast(1.6);
+}
+
+.image-3 {
+  filter: invert(1);
+}
+
+.image-4 {
+  filter: sepia(0.9);
+}
+
+.image-5 {
+  filter: grayscale(1);
+}
+
+.image-6 {
+  filter: brightness(2);
+}
+
+.image-7 {
+  filter: hue-rotate(120deg);
+}
+
+.image-8 {
+  filter: contrast(1.2) saturate(1.5) hue-rotate(45deg);
 }
 
 .image-label {
@@ -91,14 +119,14 @@
   1px 0 #fff, 
   0 -1px #fff;
 }
-/*
+
 @supports((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
   .image-label {
     -webkit-text-stroke: 1px #fff;
     text-stroke: 1px #fff;
     text-shadow: none;
   }
-}*/
+}
 
 .card-subtitle {
   background-color: white;
@@ -162,19 +190,28 @@
 }
 
 .save-button {
-  display: grid;
-  grid-column: 1fr;
+  margin: 0 auto;
+  margin-bottom: 103px;
+  max-width: 335px;
+  font-family: var(--font-accent);
+  display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 15px;
   gap: 8px;
-
+  font-size: 14px;
+  padding: 15px 0;
+  vertical-align: middle;
+  position: relative;
   background-color: white;
   border: 2px solid black;
-  font-family: var(--font-accent);
-  font-size: 14px;
+
 }
 
 dialog {
+  display: none;
+}
+
+dialog[open] {
   border: 2px solid black;
   display: grid;
   gap: 20px;
