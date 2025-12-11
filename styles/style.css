@@ -189,7 +189,6 @@
 
 .card__like-button:focus, .save-button:focus {
   outline: none;
-  
 }
 
 .card__like-button:focus-visible, .save-button:focus-visible {

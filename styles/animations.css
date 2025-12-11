@@ -16,7 +16,7 @@
 
 .like-icon:not(.is-liked):hover .core,
 .like-icon:not(.is-liked):hover .main-body {
-  fill: var(--contour-color); 
+  fill: var(--contour-color);
   opacity: 1;
 }
 
