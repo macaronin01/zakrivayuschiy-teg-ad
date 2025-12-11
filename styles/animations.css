@@ -1,5 +1,5 @@
 .like-icon .contour {
-  fill: black;
+  fill: var(--contour-color);
   transition: fill 0.3s ease;
 }
 
@@ -12,17 +12,12 @@
 .like-icon .main-body {
   fill: none;
   opacity: 0;
-  transition: opacity 0.35s ease, fill 0.2s ease;
 }
 
 .like-icon:not(.is-liked):hover .core,
 .like-icon:not(.is-liked):hover .main-body {
-  fill: #000;   
+  fill: var(--contour-color); 
   opacity: 1;
-}
-
-.like-icon:not(.is-liked):hover .contour {
-  fill: #000;
 }
 
 .card__like-button:active .like-icon .core,
@@ -44,7 +39,7 @@
 
 .like-icon.is-liked .main-body {
   opacity: 1;
-  transition-delay: 0.06s;
+  transition-delay: 0.05s;
 }
 
 .like-icon.is-liked .contour {
@@ -53,7 +48,6 @@
 }
 
 @keyframes heart-bump {
-
   0% {
      transform: scale(1);
     }
@@ -86,9 +80,4 @@
 }
 .like-icon.is-liked .sparks {
   animation: sparks-flash 0.3s ease-in 0.3s 1;
-}
-
-.like-icon:not(.is-liked) .contour {
-  fill: var(--contour-color);
-  transition: fill 0.1s linear;
 }
